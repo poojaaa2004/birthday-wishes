@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #FFAFBD, #ffc3a0);
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 20px 0;
+            color: #FFF;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 15px 0;
+            color: #FFF;
+        }
+        .btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            background-color: #FF6F61;
+            color: #FFF;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #e55a4f;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .photo {
+            margin: 20px auto;
+            border: 5px solid #FFF;
+            border-radius: 12px;
+            width: 300px;
+            height: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <script>
+        function switchPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Page 1: Welcome -->
+        <div id="page1" class="page active">
+            <h1>🎉 Happy Birthday! 🎂</h1>
+            <img src="/photo2.jpg" alt="Birthday Person" class="photo">
+            <p>Today is your special day, and it’s time to celebrate YOU!</p>
+            <button class="btn" onclick="switchPage('page2')">See Your Message</button>
+        </div>
+
+        <!-- Page 2: Message -->
+        <div id="page2" class="page">
+            <h1>🌟 Wishing You the Best! 🌟</h1>
+            <img src="/photo1.jpg" alt="Birthday Person" class="photo">
+            <p>May your birthday be filled with laughter, joy, and wonderful memories. Here’s to another year of amazing adventures!</p>
+            <p>You’re truly special, and today is all about celebrating YOU. Have the most incredible day!</p>
+            <button class="btn" onclick="switchPage('page1')">Back to Welcome</button>
+        </div>
+    </div>
+</body>
+</html>
